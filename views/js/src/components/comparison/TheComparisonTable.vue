@@ -65,7 +65,7 @@
 <script lang="ts">
 import { defineComponent } from "vue"
 import comparisonStore from "~/store/comparison"
-import TheComparisonProductBar from "~vue/comparison/TheComparisonProductBar.vue"
+import TheComparisonProductBar from "~/components/comparison/TheComparisonProductBar.vue"
 import StarRating from 'vue-star-rating'
 import pluralize from '~/helpers/pluralize'
 

@@ -32,10 +32,10 @@
 <script lang="ts">
 import { defineComponent } from "vue"
 import comparisonStore from "~/store/comparison"
-import TheLoader from "~/client/vue-components/misc/TheLoader.vue"
-import TheComparisonSlider from "~vue/comparison/TheComparisonSlider.vue"
-import TheComparisonControls from "~vue/comparison/TheComparisonControls.vue"
-import TheComparisonTable from "~vue/comparison/TheComparisonTable.vue"
+import TheLoader from "~/components/misc/TheLoader.vue"
+import TheComparisonSlider from "~/components/comparison/TheComparisonSlider.vue"
+import TheComparisonControls from "~/components/comparison/TheComparisonControls.vue"
+import TheComparisonTable from "~/components/comparison/TheComparisonTable.vue"
 
 export default defineComponent({
     name: "ComparisonPage",

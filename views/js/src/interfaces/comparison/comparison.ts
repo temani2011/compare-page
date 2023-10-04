@@ -8,7 +8,7 @@ import {
 import {
     ProductBadge,
     RaitingAndComments,
-} from '~/interfaces/base/product'
+} from './product'
 
 export interface Comparison extends Omit<JsonApi, 'data'>  {
     data: ComparisionData[]
@@ -97,4 +97,3 @@ export interface FeatureInProduct {
     comments? : number
     reversed? : boolean
 }
-

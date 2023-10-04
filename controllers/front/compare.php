@@ -23,8 +23,7 @@
 *  @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 */
-
-class express_compareCompareModuleFrontController extends ModuleFrontController
+class eo_compareExpressModuleFrontController extends ModuleFrontController
 {
     public $ssl = true;
     private $currentCategoryId = 0;
@@ -34,10 +33,22 @@ class express_compareCompareModuleFrontController extends ModuleFrontController
 
     public function setMedia()
     {
-        $this->jsChunkFilename = 'compare.ts';
         parent::setMedia();
-        //$this->addCSS(_THEME_CSS_DIR_.'comparator.css');
-        $this->addJS($this->module->getLocalPath().'views/js/compare.js');
+    }
+
+    /**
+     * Assign template vars related to page content
+     * @see FrontController::initContent()
+     */
+    public function initContent()
+    {
+        if (Tools::getValue('ajax')) {
+            return;
+        }
+
+        parent::initContent();
+
+        $this->setTemplate('module:express_compare/views/templates/front/compare-page.tpl');
     }
 
     /**
@@ -169,7 +180,7 @@ class express_compareCompareModuleFrontController extends ModuleFrontController
     }
 
     public function getBreadcrumbLinks()
-  	{
+    {
         $breadcrumb = parent::getBreadcrumbLinks();
 
         $previous = "/";
@@ -190,12 +201,12 @@ class express_compareCompareModuleFrontController extends ModuleFrontController
         ];
 
         return $breadcrumb;
-  	}
+    }
 
-  	public function getListingLabel()
-  	{
-  		return $this->trans('Compare', [], 'Modules.ExpressCompare.Catalog');
-  	}
+    public function getListingLabel()
+    {
+        return $this->trans('Compare', [], 'Modules.ExpressCompare.Catalog');
+    }
 
 
     protected function getPageData()

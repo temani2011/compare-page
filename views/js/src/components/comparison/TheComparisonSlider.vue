@@ -31,7 +31,7 @@
 
 <script lang="ts">
 import { defineComponent, nextTick, toRaw } from "vue"
-import ProductCard from "~/client/vue-components/misc/ProductCard.vue"
+import ProductCard from "~/components/misc/ProductCard.vue"
 import throttle from "~/helpers/throttle"
 import comparisonStore from "~/store/comparison"
 import KeenSliderHelper from '~/classes/keen-slider-helper'

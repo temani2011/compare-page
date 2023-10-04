@@ -43,8 +43,10 @@
                 </a>
             </div>
         </div>
-        <div :class="$bem({ e: 'right', m: { 'between': user !== null && user.logged } })">
-            <span :class="$bem({ e: 'invoice' })" v-if="user?.logged">
+        <!-- <div :class="$bem({ e: 'right', m: { 'between': user !== null && user.logged } })"> -->
+        <div :class="$bem({ e: 'right' })">
+            <!-- <span :class="$bem({ e: 'invoice' })" v-if="user?.logged"> -->
+            <span :class="$bem({ e: 'invoice' })">
                 <a :href="printLink" title="Печать сравнения" target="_blank">
                     <svg class="stroke-pale-sky-100" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <use href="#icon-print"></use>
@@ -63,7 +65,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue"
-import store from "~/store/base"
+// import store from "~/store/base"
 import comparisonStore from "~/store/comparison"
 import { ComparisonProduct } from "~/interfaces/comparison/product"
 
@@ -71,12 +73,12 @@ export default defineComponent({
     name: 'ComparisonControls',
     setup() {
         const { results, currentCategory, isFeatureDifferenceApplied } = comparisonStore.refs
-        const { user } = store.refs
+        // const { user } = store.refs
         const toggleFeatureDifference = comparisonStore.actions.toggleFeatureDifference
         const clearComparisonList = comparisonStore.actions.clearComparisonList
 
         return {
-            user,
+            // user,
             results,
             currentCategory,
             isFeatureDifferenceApplied,
